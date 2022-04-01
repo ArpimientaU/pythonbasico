@@ -23,12 +23,12 @@ class Empleado(Persona):
         self.__listaEmpleados = []
 
     def agregarEmpleado(self):
-        cedula = input("Digite la cedula...")
-        nombre = input("Digite el nombre")
-        apellidos = input("Digite los apellidos...")
-        direccion = input("Digite la direccion...")
-        telefono = input("Digite el telefono...")
-        salario = float(input("Digite el salario"))
+        cedula = input("Digite la cedula: ")
+        nombre = input("Digite el nombre: ")
+        apellidos = input("Digite los apellidos: ")
+        direccion = input("Digite la direccion: ")
+        telefono = input("Digite el telefono: ")
+        salario = float(input("Digite el salario: "))
 
         per = {
             'cedula': cedula,
@@ -60,7 +60,7 @@ class Empleado(Persona):
 
     def calcularDeducciones(self):
         self.__deducciones['salud'] = self.__devengado['salario'] * 4 / 1000
-        self.__deducciones['pension'] = self.__devengado['salario'] * 3.375
+        self.__deducciones['pension'] = self.__devengado['salario'] * 3.375 / 100
 
     def menu(self, opciones):
         while(True):
@@ -72,7 +72,7 @@ class Empleado(Persona):
 
             if opcion == "1":
                 os.system("clear")
-                self.agregarEmpleado
+                self.agregarEmpleado()
                 self.calcularDevengado()
                 self.calcularDeducciones()
 
